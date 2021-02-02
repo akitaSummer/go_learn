@@ -25,8 +25,8 @@ func TestParseCityList(t *testing.T) {
 	}
 
 	for i, url := range expectedUrls {
-		if result.Request[i].Url != url {
-			t.Errorf("expected url #%d: %s; but was %s", i, url, result.Request[i].Url)
+		if result.Requests[i].Url != url {
+			t.Errorf("expected url #%d: %s; but was %s", i, url, result.Requests[i].Url)
 		}
 	}
 
@@ -36,8 +36,8 @@ func TestParseCityList(t *testing.T) {
 		}
 	}
 
-	if len(result.Request) != resultSize {
-		t.Errorf("result should have %d requsets; but had %d", resultSize, len(result.Request))
+	if len(result.Requests) != resultSize {
+		t.Errorf("result should have %d requsets; but had %d", resultSize, len(result.Requests))
 	}
 
 	if len(result.Items) != resultSize {
